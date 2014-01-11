@@ -1,0 +1,13 @@
+class CreateProducts < ActiveRecord::Migration
+  def change
+    create_table :products, {:id => false} do |t|
+      t.string :id, null: false
+      t.string :name
+      t.text :description
+      t.float :price
+      t.boolean :is_subscription
+
+      t.timestamps
+    end
+  end
+end

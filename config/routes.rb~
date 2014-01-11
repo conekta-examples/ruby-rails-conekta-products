@@ -1,7 +1,6 @@
 HelloConektaRubyRails::Application.routes.draw do
   resources :events
   post 'process_event' => 'events#process_event'
-  get 'process_event' => 'events#process_event'
   resources :products
 
   resources :charges
