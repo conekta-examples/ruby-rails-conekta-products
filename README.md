@@ -1,8 +1,3 @@
-hello-conekta-ruby-rails
-========================
-
-Ruby of Rails demos application which uses conekta
-
 ## hello-conekta-ruby-rails
 Rails 4 app which implements payment calls via conekta-ruby.
 
