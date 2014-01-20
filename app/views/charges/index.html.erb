@@ -1,0 +1,55 @@
+<h1>Listing charges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Livemode</th>
+      <th>Created at</th>
+      <th>Status</th>
+      <th>Currency</th>
+      <th>Description</th>
+      <th>Reference</th>
+      <th>Failure code</th>
+      <th>Failure message</th>
+      <th>Amount</th>
+      <th>Card name</th>
+      <th>Card exp month</th>
+      <th>Card exp year</th>
+      <th>Card auth code</th>
+      <th>Card last4</th>
+      <th>Card brand</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @charges.each do |charge| %>
+      <tr>
+        <td><%= charge.livemode %></td>
+        <td><%= charge.created_at %></td>
+        <td><%= charge.status %></td>
+        <td><%= charge.currency %></td>
+        <td><%= charge.description %></td>
+        <td><%= charge.reference_id %></td>
+        <td><%= charge.failure_code %></td>
+        <td><%= charge.failure_message %></td>
+        <td><%= charge.amount / 100 %></td>
+        <td><%= charge.card_name %></td>
+        <td><%= charge.card_exp_month %></td>
+        <td><%= charge.card_exp_year %></td>
+        <td><%= charge.card_auth_code %></td>
+        <td><%= charge.card_last4 %></td>
+        <td><%= charge.card_brand %></td>
+        <td><%= link_to 'Show', charge %></td>
+        <td><%= link_to 'Edit', edit_charge_path(charge) %></td>
+        <td><%= link_to 'Destroy', charge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Charge', new_charge_path %>

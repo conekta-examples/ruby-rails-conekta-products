@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  livemode: false
+  created_at: 2014-01-10 11:40:06
+  status: MyString
+  currency: MyString
+  description: MyText
+  reference_id: MyString
+  failure_code: MyString
+  failure_message: MyString
+  amount: 1.5
+  card_name: MyString
+  card_exp_month: MyString
+  card_exp_year: MyString
+  card_auth_code: MyString
+  card_last4: MyString
+  card_brand: MyString
+
+two:
+  livemode: false
+  created_at: 2014-01-10 11:40:06
+  status: MyString
+  currency: MyString
+  description: MyText
+  reference_id: MyString
+  failure_code: MyString
+  failure_message: MyString
+  amount: 1.5
+  card_name: MyString
+  card_exp_month: MyString
+  card_exp_year: MyString
+  card_auth_code: MyString
+  card_last4: MyString
+  card_brand: MyString

@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Livemode:</strong>
+  <%= @charge.livemode %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @charge.created_at %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @charge.status %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @charge.currency %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @charge.description %>
+</p>
+
+<p>
+  <strong>Reference:</strong>
+  <%= @charge.reference_id %>
+</p>
+
+<p>
+  <strong>Failure code:</strong>
+  <%= @charge.failure_code %>
+</p>
+
+<p>
+  <strong>Failure message:</strong>
+  <%= @charge.failure_message %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @charge.amount %>
+</p>
+
+<p>
+  <strong>Card name:</strong>
+  <%= @charge.card_name %>
+</p>
+
+<p>
+  <strong>Card exp month:</strong>
+  <%= @charge.card_exp_month %>
+</p>
+
+<p>
+  <strong>Card exp year:</strong>
+  <%= @charge.card_exp_year %>
+</p>
+
+<p>
+  <strong>Card auth code:</strong>
+  <%= @charge.card_auth_code %>
+</p>
+
+<p>
+  <strong>Card last4:</strong>
+  <%= @charge.card_last4 %>
+</p>
+
+<p>
+  <strong>Card brand:</strong>
+  <%= @charge.card_brand %>
+</p>
+
+<%= link_to 'Edit', edit_charge_path(@charge) %> |
+<%= link_to 'Back', charges_path %>
