@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'conekta', :git => "https://conekta-private-repo:S407Vptpx6bij2a@github.com/conekta/conekta-ruby-new.git", :branch => 'master'
+gem 'conekta'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
