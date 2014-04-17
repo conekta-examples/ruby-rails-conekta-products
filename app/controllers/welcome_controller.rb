@@ -25,8 +25,9 @@ class WelcomeController < ApplicationController
         subscription = customer.create_subscription({
   				plan: params['planId']
 				})
-        redirect_to :charges
       end
+      redirect_to :charges
+      return
     else
       charge = Conekta::Charge.create({
         amount:  (params['productPrice'].to_f * 100).to_i,

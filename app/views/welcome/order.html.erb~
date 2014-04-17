@@ -76,6 +76,7 @@
     <span>/</span>
     <input type="text" size="4" data-conekta="card[exp_year]" value="2016"/>
   </div>
+  <input type="hidden" value="<%= form_authenticity_token() %>" name="authenticity_token"/>
   <button type="submit">Submit Order</button>
 </form>
-<%= link_to :back %>
+<%= link_to "back", :back %>
