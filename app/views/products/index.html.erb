@@ -21,9 +21,9 @@
         <td><%= product.price %></td>
         <form action="order" method="POST">
           <input type="hidden" name="price" value="<%= product.price %>" />
-			    <input type="hidden" name="description" value="<%= product.description %>" />
-			    <input type="hidden" name="is_subscription" value="<%= product.is_subscription %>" />
-			    <input type="hidden" name="plan_id" value='<%= "#{product.name}#{product.id}" %>' />
+          <input type="hidden" name="description" value="<%= product.description %>" />
+          <input type="hidden" name="is_subscription" value="<%= product.is_subscription %>" />
+          <input type="hidden" name="plan_id" value='<%= "#{product.name}#{product.id}" %>' />
           <td><button type="submit"><%= if product.is_subscription then "Subscribe" else "Buy Now" end %></button></td>
         </form>
         <td><%= link_to 'Show', product %></td>
