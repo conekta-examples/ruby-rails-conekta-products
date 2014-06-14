@@ -4,11 +4,17 @@
   <title>HelloConektaRubyRails</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://conektaapi.s3.amazonaws.com/v0.3.0/js/conekta.js"></script>
+  <script type="text/javascript">
+    // Conekta Public Key
+    Conekta.setPublishableKey('key_EVryd61Uhsq9d6Z2');
+  </script>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div id="container">
+    <%= yield %>
+  </div>
 </body>
 </html>
