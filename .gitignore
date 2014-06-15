@@ -18,3 +18,5 @@ pickle-email-*.html
 .project
 config/initializers/secret_token.rb
 config/secrets.yml
+.rbenv-vars
+_env.rb
