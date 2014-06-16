@@ -1,0 +1,31 @@
+<%= form_for Charge.new, url: url_for(controller: 'charges', action: 'create'), method: :post, html: {id: 'card-form'} do |f| %>
+  <%= f.hidden_field :amount, {value: @product.price} %>
+  <span class="card-errors"></span>
+  <div class="form-row">
+    <label>
+      <span>Nombre del tarjeta habiente</span>
+      <input type="text" size="20" data-conekta="card[name]"/>
+    </label>
+  </div>
+  <div class="form-row">
+    <label>
+      <span>Número de tarjeta de crédito</span>
+      <input type="text" size="20" data-conekta="card[number]"/>
+    </label>
+  </div>
+  <div class="form-row">
+    <label>
+      <span>CVC</span>
+      <input type="text" size="4" data-conekta="card[cvc]"/>
+    </label>
+  </div>
+  <div class="form-row">
+    <label>
+      <span>Fecha de expiración (MM/AAAA)</span>
+      <input type="text" size="2" data-conekta="card[exp_month]"/>
+    </label>
+    <span>/</span>
+    <input type="text" size="4" data-conekta="card[exp_year]"/>
+  </div>
+  <%= f.submit "Do it!" %>
+<% end %>
