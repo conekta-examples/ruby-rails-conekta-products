@@ -5,8 +5,8 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Price</th>
-      <th>Buy One Unit!</th>
+      <th>Price in cents</th>
+      <th>Buy</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,7 +18,7 @@
       <tr>
         <td><%= product.name %></td>
         <td><%= product.description %></td>
-        <td><%= product.price %></td>
+        <td><%= product.price.to_i %></td>
         <form action="order" method="POST">
           <input type="hidden" name="price" value="<%= product.price %>" />
           <input type="hidden" name="description" value="<%= product.description %>" />

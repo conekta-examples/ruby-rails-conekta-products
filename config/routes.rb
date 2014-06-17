@@ -4,6 +4,8 @@ HelloConektaRubyRails::Application.routes.draw do
   get 'process_event' => 'events#process_event'
   resources :products
 
+  get '/products/:id/buy', to: 'products#buy', as: 'buy_product'
+  get '/products/:id/subscription', to: 'products#subscription', as: 'subscription_product'
   resources :charges
 
   # The priority is based upon order of creation: first created -> highest priority.
