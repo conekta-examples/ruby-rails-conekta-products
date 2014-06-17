@@ -14,7 +14,6 @@ class ChargesController < ApplicationController
 
   # GET /charges/new
   def new
-    @charge = Charge.new
   end
 
   # GET /charges/1/edit
@@ -24,8 +23,22 @@ class ChargesController < ApplicationController
   # POST /charges
   # POST /charges.json
   def create
-    @charge = Charge.new(charge_params)
-
+    product = Product.find(charge_params["charge"]["product_id"])
+    begin
+      charge = Conekta::Charge.create({
+        amount: product.price.to_i,
+        currency: 'MXN',
+        description: product.description,
+        card: charge_params["charge"]["token"],
+        reference_id: "ANYIDCAN-be-ref"
+      })
+    rescue Conekta::Error => e
+      flash[:error] = e.message_to_purchaser
+      redirect_to buy_product_path(product.id)
+      return
+    end
+    @charge = Charge.new
+    @charge.add(charge)
     respond_to do |format|
       if @charge.save
         format.html { redirect_to @charge, notice: 'Charge was successfully created.' }
@@ -69,6 +82,6 @@ class ChargesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def charge_params
-      params.require(:charge).permit(:livemode, :created_at, :status, :currency, :description, :reference_id, :failure_code, :failure_message, :amount, :card_name, :card_exp_month, :card_exp_year, :card_auth_code, :card_last4, :card_brand)
+      params.permit(charge: [:product_id, :token])
     end
 end
