@@ -10,7 +10,7 @@ conektaErrorResponseHandler = (response) ->
 
 conektaSuccessResponseHandler = (token) ->
   $form = $("#card-form")
-  $form.append $("<input type=\"hidden\" name=\"conektaTokenId\" />").val(token.id)
+  $form.append $("<input type=\"hidden\" name=\"charge[token]\" />").val(token.id)
   alert token.id
   $form.get(0).submit()
   return
