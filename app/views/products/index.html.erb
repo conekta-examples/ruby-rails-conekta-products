@@ -1,12 +1,12 @@
 <h1>Listing products</h1>
-
+<%=flash[:note].html_safe if flash[:note]%>
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Price</th>
-      <th>Buy One Unit!</th>
+      <th>Price in cents</th>
+      <th>Buy</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,13 +18,13 @@
       <tr>
         <td><%= product.name %></td>
         <td><%= product.description %></td>
-        <td><%= product.price %></td>
+        <td><%= product.price.to_i %></td>
         <form action="order" method="POST">
           <input type="hidden" name="price" value="<%= product.price %>" />
           <input type="hidden" name="description" value="<%= product.description %>" />
           <input type="hidden" name="is_subscription" value="<%= product.is_subscription %>" />
           <input type="hidden" name="plan_id" value='<%= "#{product.name}#{product.id}" %>' />
-          <td><button type="submit"><%= if product.is_subscription then "Subscribe" else "Buy Now" end %></button></td>
+          <td><%= buy_or_subscription(product) %></td>
         </form>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>

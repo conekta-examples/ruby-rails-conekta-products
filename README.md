@@ -9,8 +9,10 @@ This sample are using ``.ruby-version`` and ``.ruby-gemset`` files, if you are u
 3. ``gem install bundle``
 4. ``bundle``
 5. ``rake db:migrate``
-6. open ``config/secrets.yml.example`` and put your Sandbox Conekta API KEY, then save without extension .example, the file names looks like ``config/secrets.yml``.
+6. run ``rake secret`` in your console, copy and paste the secret code to ``config/secrets.yml.example``, then put your Sandbox Secret/Public Conekta API KEY. Save without extension ``.example``, the file names looks like ``config/secrets.yml``.
 
 Now you can run ``rails s`` and go to ``http://localhost:3000`` or if you´re using pow.cx, you need to make a symbolic link `` ln -s [route_to_project]/hello-conekta  ~/.pow/hello-conekta``, after you make the symblink to hello-conekta, you can go to your browser and write ``http://hello-conekta.dev``
 
 To run it, install rails 4. The app should run on http://localhost:3000.
+
+The project need some improvements, but you can test Conekta::Charge.create in Ruby on Rails, feel free to make PR
