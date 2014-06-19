@@ -24,14 +24,25 @@ class ChargesController < ApplicationController
   # POST /charges.json
   def create
     product = Product.find(charge_params["charge"]["product_id"])
-    begin
-      charge = Conekta::Charge.create({
+    new_charge = if product.is_subscription?
+                   {
         amount: product.price.to_i,
         currency: 'MXN',
         description: product.description,
         card: charge_params["charge"]["token"],
         reference_id: "ANYIDCAN-be-ref"
-      })
+      }
+                 else
+                   {
+        amount: product.price.to_i,
+        currency: 'MXN',
+        description: product.description,
+        card: charge_params["charge"]["token"],
+        reference_id: "ANYIDCAN-be-ref"
+      }
+    end
+    begin
+      charge = Conekta::Charge.create(new_charge)
     rescue Conekta::Error => e
       flash[:error] = e.message_to_purchaser
       redirect_to buy_product_path(product.id)
