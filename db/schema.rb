@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140110205145) do
+ActiveRecord::Schema.define(version: 20140621044836) do
 
   create_table "charges", id: false, force: true do |t|
     t.string   "id",              null: false
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 20140110205145) do
     t.string   "card_auth_code"
     t.string   "card_last4"
     t.string   "card_brand"
+    t.datetime "updated_at"
+  end
+
+  create_table "customers", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "token"
+    t.string   "customer_id"
+    t.datetime "created_at"
     t.datetime "updated_at"
   end
 
