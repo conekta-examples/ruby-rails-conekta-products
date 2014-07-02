@@ -31,11 +31,6 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
-
-    if @product.is_subscription?
-      #code to find or create Plan in Conekta::Plans
-    end
-
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
