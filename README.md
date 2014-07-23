@@ -1,6 +1,8 @@
-## Hello Conekta Ruby on Rails
+![alt tag](https://raw.github.com/conekta/hello-conekta-ruby-rails/master/readme_files/cover.png)
 
-###Rails 4 app which implements payment calls via conekta-ruby.
+# Hello Conekta Ruby on Rails
+
+##Rails 4 app which implements payment calls via conekta-ruby.
 
 This sample are using ``.ruby-version`` and ``.ruby-gemset`` files, if you are using rb-env or rvm you can use the next steps.
 
@@ -15,4 +17,8 @@ Now you can run ``rails s`` and go to ``http://localhost:3000`` or if you´re us
 
 To run it, install rails 4. The app should run on http://localhost:3000.
 
-The project need some improvements, but you can test Conekta::Charge.create in Ruby on Rails, feel free to make PR
+The project need some improvements, but you can test Conekta::Charge.create in Ruby on Rails, feel free to make PR.
+
+License
+-------
+Developed by [Conekta](https://www.conekta.io). Available with [MIT License](LICENSE).
