@@ -2,7 +2,7 @@
 
 # Hello Conekta Ruby on Rails
 
-##Rails 4 app which implements payment calls via conekta-ruby.
+Rails 4 app which implements payment calls via conekta-ruby.
 
 This sample are using ``.ruby-version`` and ``.ruby-gemset`` files, if you are using rb-env or rvm you can use the next steps.
 
